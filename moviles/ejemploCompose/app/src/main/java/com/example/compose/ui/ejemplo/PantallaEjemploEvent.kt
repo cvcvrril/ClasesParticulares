@@ -6,6 +6,7 @@ package com.example.compose.ui.ejemplo
 
 sealed class PantallaEjemploEvent {
 
-
+    data object  SumarId : PantallaEjemploEvent()
+    class CambiarId(val id: Int) : PantallaEjemploEvent()
 
 }

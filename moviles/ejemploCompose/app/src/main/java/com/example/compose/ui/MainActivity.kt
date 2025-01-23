@@ -32,6 +32,13 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+/**
+ * Ejemplo de que podemos crear una función @Composable en el propio MainActivity que podría
+ *  funcionar como la pantalla
+ * Pero por motivos del modelo, las pantallas se crean a parte para mayor orden y limpieza
+ *  del código
+ **/
+
 @Composable
 fun PantallaEjemplo(){
     Surface() {
