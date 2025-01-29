@@ -10,6 +10,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import com.example.compose.ui.ejemplo.PantallaEjemploScreen
+import com.example.compose.ui.navigation.Navigation
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
@@ -21,13 +22,20 @@ import dagger.hilt.android.AndroidEntryPoint
  * Método al que se llama cuando la actividad se crea
  * **/
 
+/**
+ * A partir de que metamos la navegación ya no tendremos que llamar a la función que contenga la pantalla,
+ *  sino a la que se encarga de llevar la navegación (porque por defecto en ella se indica desde qué
+ *  pantalla se va a inicializar la aplicación).
+ * **/
+
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
                //PantallaEjemplo()
-            PantallaEjemploScreen()
+               //PantallaEjemploScreen()
+            Navigation()
         }
     }
 }
