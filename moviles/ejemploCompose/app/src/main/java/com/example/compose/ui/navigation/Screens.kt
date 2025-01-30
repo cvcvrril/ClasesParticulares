@@ -14,6 +14,11 @@ val listaPantallas = listOf(PantallaSumar, PantallaMultiplicar)
  * Creamos una interfaz para hacer más sencilla la tarea de indicar los destinos de las pantallas
  * **/
 
+/**
+ * Por si quieres ver todos los iconos que incluye el Material Design:
+ * https://fonts.google.com/icons
+ * **/
+
 interface AppScreenDestination {
     val route: Any
     val title: String

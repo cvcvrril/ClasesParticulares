@@ -52,6 +52,11 @@ fun Navigation(){
             modifier = Modifier.padding(innerPadding)
         ) {
 
+            /**
+             * En cada composable se mete la dirección a la que debe de apuntar el Host, y la
+             *  función que llama a la pantalla
+             * **/
+
             composable<SumarDestination> {
                 PantallaEjemploScreen()
             }

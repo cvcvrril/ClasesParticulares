@@ -15,6 +15,11 @@ import androidx.navigation.compose.rememberNavController
 import com.example.compose.ui.navigation.AppScreenDestination
 import com.example.compose.ui.navigation.listaPantallas
 
+/**
+ * Es la función que se encarga de componer la barra inferior de navegación
+ * Necesita el navController y las pantallas
+ * **/
+
 
 @Composable
 fun BottomBar(
