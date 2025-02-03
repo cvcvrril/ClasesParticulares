@@ -12,6 +12,16 @@ import com.example.compose.ui.ejemplo.PantallaEjemploScreen
 import com.example.compose.ui.ejemplo2.PantallaEjemplo2Screen
 
 /**
+ * 1. Definimos las pantallas por las que vamos a navegar por el bar
+ * 2. Montamos la función composable que se encargue de construir el bottom/top bar
+ * 3. Al igual que pasa con las pantallas, necesitamos definir el estado de la barra (si fuera
+ *    necesario)
+ * 4. Creamos la función Navigation que se encargará de orquestar toda la navegación entre las
+ *    pantallas
+ * **/
+
+
+/**
  * En este archivo montamos toda la estructura de navegación entre las pantallas
  * **/
 

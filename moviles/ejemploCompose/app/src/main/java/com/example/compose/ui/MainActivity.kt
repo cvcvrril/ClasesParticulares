@@ -28,6 +28,11 @@ import dagger.hilt.android.AndroidEntryPoint
  *  pantalla se va a inicializar la aplicación).
  * **/
 
+/**
+ * A medida que vayas actualizando y avanzando con la aplicación móvil, irás actualizando lo que contenga
+ *  el MainActivity.
+ * **/
+
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

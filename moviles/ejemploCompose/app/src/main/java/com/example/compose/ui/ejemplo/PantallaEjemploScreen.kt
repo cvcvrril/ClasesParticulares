@@ -14,6 +14,21 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
+/**
+ * 1. Crear la función que contenga la pantalla (PantallaEjemploScreen).
+ * 2. Crear la función que tenga el contenido de la pantalla (PantallaEjemploContent).
+ * 3. Ir metiendo elementos en la pantalla, hasta que alguno de los elementos necesite cambiar
+ *      su estado.
+ * 4. Creación del estado de la pantalla, y con ello los eventos para que cambie ese estado.
+ * 5. Creación del ViewModel, y definición de las funciones que se encarguen de cambiar el
+ *      estado de la pantalla.
+ * 6. Implementación del handleEvent en la función que contenga la pantalla (por la función que
+ *      se encargará de cambiar el estado)
+ * 7. Montar el preview de la pantalla -> esto te ayudará a ver mejor la disposición de los
+ *      elementos en la pantalla
+ * **/
+
+
 @Composable
 fun PantallaEjemploScreen(
 
