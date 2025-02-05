@@ -130,4 +130,14 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //Splash Screen
+
+    implementation(libs.androidx.core.splashscreen)
+
+    //DataStore
+
+    implementation(libs.androidx.datastore.preferences)
+
+
 }

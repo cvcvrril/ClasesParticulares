@@ -2,59 +2,35 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "0f5e7003354a68fb17f26761b54d4e2a",
+    "identityHash": "fd8f04a946d8266f90319ce642e46dd2",
     "entities": [
       {
-        "tableName": "coches",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`matricula` TEXT NOT NULL, `marca` TEXT NOT NULL, `modelo` TEXT NOT NULL, `color` TEXT NOT NULL, `precio` REAL NOT NULL, `fechaMatriculacion` TEXT NOT NULL, `km` INTEGER NOT NULL, PRIMARY KEY(`matricula`))",
+        "tableName": "alumnos",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `nombre` TEXT NOT NULL, `apellido` TEXT NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
-            "fieldPath": "matricula",
-            "columnName": "matricula",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "marca",
-            "columnName": "marca",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "modelo",
-            "columnName": "modelo",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "color",
-            "columnName": "color",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "precio",
-            "columnName": "precio",
-            "affinity": "REAL",
-            "notNull": true
-          },
-          {
-            "fieldPath": "fechaMatriculacion",
-            "columnName": "fechaMatriculacion",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "km",
-            "columnName": "km",
+            "fieldPath": "id",
+            "columnName": "id",
             "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nombre",
+            "columnName": "nombre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "apellido",
+            "columnName": "apellido",
+            "affinity": "TEXT",
             "notNull": true
           }
         ],
         "primaryKey": {
           "autoGenerate": false,
           "columnNames": [
-            "matricula"
+            "id"
           ]
         },
         "indices": [],
@@ -64,7 +40,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '0f5e7003354a68fb17f26761b54d4e2a')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'fd8f04a946d8266f90319ce642e46dd2')"
     ]
   }
 }
