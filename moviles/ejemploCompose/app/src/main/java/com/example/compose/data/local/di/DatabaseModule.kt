@@ -1,7 +1,6 @@
 package com.example.compose.data.local.di
 
 import android.content.Context
-import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.room.Room
 import com.example.compose.data.local.AppDatabase
@@ -10,9 +9,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import java.util.prefs.Preferences
 import javax.inject.Singleton
-//import androidx.datastore.core.DataStore
 
 /**
  * Clase que se encarga de inicializar la base de datos local (Room)
@@ -44,6 +41,7 @@ object DatabaseModule {
     /**
      * Información sobre el data store:
      * -> https://developer.android.com/jetpack/androidx/releases/datastore?hl=es-419
+     * -> https://medium.com/androiddevelopers/all-about-preferences-datastore-cc7995679334
      * **/
 
     val Context.dataStore by preferencesDataStore(name = "data_store")

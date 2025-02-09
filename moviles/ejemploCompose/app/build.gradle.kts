@@ -86,6 +86,7 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.kotlinx.serialization.json)
 
+    testImplementation(libs.kotlinx.coroutines.test)
 
 
 
@@ -111,7 +112,11 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewModelCompose)
     implementation(libs.androidx.adaptive.android)
 
-
+    //Mockito
+    //testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.mockito.kotlin.v410)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.inline)
 
 
     kapt(libs.hilt.compiler)
