@@ -16,7 +16,6 @@ data class AlumnoEntity(
     val id: Int,
     val nombre: String,
     val apellido: String,
-//    val asignaturas: List<AsignaturaEntity>
 )
 
 /**
@@ -27,12 +26,10 @@ fun AlumnoEntity.toAlumno(): Alumno = Alumno(
     id = this.id,
     nombre = this.nombre,
     apellido = this.apellido,
-//    asignaturas = this.asignaturas.map { it.toAsignatura() }
 )
 
 fun Alumno.toAlumnoEntity(): AlumnoEntity = AlumnoEntity(
     id = this.id,
     nombre = this.nombre,
     apellido = this.apellido,
-//    asignaturas = this.asignaturas.map { it.toAsignaturaEntity() }
 )

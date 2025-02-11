@@ -12,6 +12,9 @@ android {
     namespace = "com.example.compose"
     compileSdk = 35
 
+    testOptions {
+        unitTests.isReturnDefaultValues = true
+    }
     defaultConfig {
         applicationId = "com.example.compose"
         minSdk = 26
@@ -68,6 +71,10 @@ android {
     room {
         schemaDirectory("$projectDir/schemas")
     }
+    kapt {
+        correctErrorTypes = true
+    }
+
 }
 
 dependencies {
@@ -86,7 +93,7 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.kotlinx.serialization.json)
 
-    testImplementation(libs.kotlinx.coroutines.test)
+
 
 
 
@@ -117,6 +124,12 @@ dependencies {
     testImplementation(libs.mockito.kotlin.v410)
     testImplementation(libs.mockito.core)
     testImplementation(libs.mockito.inline)
+    testImplementation(libs.kotlinx.coroutines.test)
+
+    //JUnit
+
+    testImplementation(libs.junit.jupiter.api)
+    testRuntimeOnly(libs.junit.jupiter.engine)
 
 
     kapt(libs.hilt.compiler)
