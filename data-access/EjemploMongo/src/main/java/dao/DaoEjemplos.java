@@ -30,6 +30,10 @@ public class DaoEjemplos {
                 .create();
     }
 
+    /**
+     * Toma el nombre de la primera ciudad de la lista
+     * **/
+
     public Either<ErrorObject, String>ejemplo1(){
         Either<ErrorObject, String>res;
         try(MongoClient mongo = MongoClients.create("mongodb://informatica.iesquevedo.es:2323")){
@@ -47,6 +51,50 @@ public class DaoEjemplos {
             res = Either.left(new ErrorObject(e.getMessage(), 0));
         }
 
+        return res;
+    }
+
+    /**
+     * Encuentra una ciudad por el id
+     * **/
+
+    public Either<ErrorObject, String>ejemplo2(String id){
+        Either<ErrorObject, String>res;
+        try(MongoClient mongo = MongoClients.create("mongodb://informatica.iesquevedo.es:2323")){
+            MongoDatabase db = mongo.getDatabase("luciasanmiguel_zipcodes");
+            MongoCollection<Document> collection = db.getCollection("zipcodes");
+            Document filtro = new Document("_id", id);
+            Document document = collection.find(filtro).first();
+            if (document == null){
+                res = Either.left(new ErrorObject("No se ha encontrado un objeto", 1));
+            }else {
+                EjemploObject ciudad = gson.fromJson(document.toJson(), EjemploObject.class);
+                res = Either.right(ciudad.getCity());
+            }
+
+        }catch (Exception e) {
+            res = Either.left(new ErrorObject(e.getMessage(), 0));
+        }
+        return res;
+    }
+
+    public Either<ErrorObject, EjemploObject>ejemplo3(String id){
+        Either<ErrorObject, EjemploObject>res;
+        try(MongoClient mongo = MongoClients.create("mongodb://informatica.iesquevedo.es:2323")){
+            MongoDatabase db = mongo.getDatabase("luciasanmiguel_zipcodes");
+            MongoCollection<Document> collection = db.getCollection("zipcodes");
+            Document filtro = new Document("_id", id);
+            Document document = collection.find(filtro).first();
+            if (document == null){
+                res = Either.left(new ErrorObject("No se ha encontrado un objeto", 1));
+            }else {
+                EjemploObject ciudad = gson.fromJson(document.toJson(), EjemploObject.class);
+                res = Either.right(ciudad);
+            }
+
+        }catch (Exception e) {
+            res = Either.left(new ErrorObject(e.getMessage(), 0));
+        }
         return res;
     }
 
