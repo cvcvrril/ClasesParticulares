@@ -5,7 +5,8 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 
 import io.vavr.control.Either;
-import org.example.dao.data.UserRepository;
+
+import org.example.dao.repositories.UserRepository;
 import org.example.domain.model.Usuario;
 import org.example.domain.model.error.ErrorObject;
 import org.example.utils.RandomBytesGenerator;

@@ -3,7 +3,8 @@ package org.example.domain;
 
 
 
-import org.example.dao.data.UserRepository;
+
+import org.example.dao.repositories.UserRepository;
 import org.example.domain.model.Usuario;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -1,6 +1,7 @@
 package org.example.config;
 
-import org.example.dao.data.UserRepository;
+
+import org.example.dao.repositories.UserRepository;
 import org.example.domain.CustomUserDetailsService;
 import org.example.utils.RandomBytesGenerator;
 import org.springframework.context.annotation.Bean;

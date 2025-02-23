@@ -1,7 +1,8 @@
 package org.example.domain;
 
 
-import org.example.dao.data.UserRepository;
+
+import org.example.dao.repositories.UserRepository;
 import org.example.domain.model.request.AuthenticationRequest;
 import org.example.domain.model.response.AuthResponse;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -13,14 +14,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class AuthService {
 
-    UserRepository ra = new UserRepository();
-
+    private final UserRepository userRepository;
     private final PasswordEncoder passwordHash;
     private final AuthenticationManager authenticationManager;
     private final UserDetailsService userDetailsService;
     private final JwtService jwtService;
 
-    public AuthService(PasswordEncoder passwordHash, AuthenticationManager authenticationManager, UserDetailsService userDetailsService, JwtService jwtService) {
+    public AuthService(UserRepository userRepository, PasswordEncoder passwordHash, AuthenticationManager authenticationManager, UserDetailsService userDetailsService, JwtService jwtService) {
+        this.userRepository = userRepository;
         this.passwordHash = passwordHash;
         this.authenticationManager = authenticationManager;
         this.userDetailsService = userDetailsService;
