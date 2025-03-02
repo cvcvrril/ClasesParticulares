@@ -3,7 +3,7 @@
 <properties>
     <comment>XML file</comment>
     <entry key="xmlPath">src/main/resources/xml/Factions.xml</entry>
-    <entry key="sqlUrl">jdbc:mysql://localhost:3306/supermercado?useSSL=false</entry>
+    <entry key="sqlUrl">jdbc:mysql://localhost:3306/supermercado?allowPublicKeyRetrieval=true&amp;useSSL=false</entry>
     <entry key="sqlUser">root</entry>
     <entry key="sqlPassword">root</entry>
     <entry key="driver">com.mysql.cj.jdbc.Driver</entry>

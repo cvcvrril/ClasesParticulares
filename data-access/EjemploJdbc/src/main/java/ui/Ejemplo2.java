@@ -2,23 +2,25 @@ package ui;
 
 import jakarta.enterprise.inject.se.SeContainer;
 import jakarta.enterprise.inject.se.SeContainerInitializer;
+import model.Categoria;
 import model.Producto;
+import service.ServiceCategoria;
 import service.ServiceProducto;
 
 import java.util.List;
 
-public class Ejemplo1 {
+public class Ejemplo2 {
 
     public static void main(String[] args) {
 
         /**
-         * Ejemplo 1. Sacar todos los productos disponibles
+         * Ejemplo 2. Sacar todas las categorías
          * **/
 
         SeContainerInitializer seContainerInitializer = SeContainerInitializer.newInstance();
         final SeContainer container = seContainerInitializer.initialize();
-        ServiceProducto service = container.select(ServiceProducto.class).get();
-        List<Producto> productos = service.getAll().getOrElseThrow(() -> new RuntimeException());
+        ServiceCategoria service = container.select(ServiceCategoria.class).get();
+        List<Categoria> productos = service.getAll().get();
 
         System.out.println(productos);
 

@@ -3,6 +3,7 @@ package dao;
 import dao.common.DBConnectionPool;
 import io.vavr.control.Either;
 import jakarta.inject.Inject;
+import model.Categoria;
 import model.Producto;
 import model.error.ExamError;
 
@@ -13,8 +14,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
-public class DaoProducto {
+public class DaoCategoria {
 
     /**
      * Importamos el DB Connection, muy importante hacer el inject
@@ -23,25 +23,25 @@ public class DaoProducto {
     private final DBConnectionPool db;
 
     @Inject
-    public DaoProducto(DBConnectionPool db) {
+    public DaoCategoria(DBConnectionPool db) {
         this.db = db;
     }
 
     /**
-     * Método para obtener todos los productos
+     * Método para obtener todas las categorias
      * **/
 
-    public Either<ExamError, List<Producto>> getAll(){
-        Either<ExamError, List<Producto>> res;
-        List<Producto> productos;
+    public Either<ExamError, List<Categoria>> getAll(){
+        Either<ExamError, List<Categoria>> res;
+        List <Categoria> categorias;
         try(Connection connection = db.getConnection()){
-            PreparedStatement pstmt = connection.prepareCall("select * from producto");
+            PreparedStatement pstmt = connection.prepareCall("select * from categoria");
             ResultSet rs = pstmt.executeQuery();
-            productos = readRS(rs);
-            if (productos.isEmpty()){
-                res = Either.left(new ExamError(0, "The list of products is empty"));
+            categorias = readRS(rs);
+            if (categorias.isEmpty()){
+                res = Either.left(new ExamError(0, "The list of categories is empty"));
             }else {
-                res = Either.right(productos);
+                res = Either.right(categorias);
             }
         }catch (SQLException e) {
             //log.error(e.getMessage(), e);
@@ -50,27 +50,18 @@ public class DaoProducto {
         return res;
     }
 
+
     /**
      * Mapeado
      * **/
 
-    /**
-     * Para Strings usar getString, NO getNString
-     * **/
-
-    private List<Producto> readRS(ResultSet rs) throws SQLException{
-        List<Producto> productoList = new ArrayList<>();
+    private List<Categoria> readRS(ResultSet rs) throws SQLException{
+        List<Categoria> productoList = new ArrayList<>();
         while (rs.next()){
             int codigo = rs.getInt("codigo");
             String nombre = rs.getString("nombre");
-            double pvp = rs.getDouble("pvp");
-            int stock = rs.getInt("stock");
-            int categoria = rs.getInt("categoria");
-            productoList.add(new Producto(codigo, nombre, pvp, stock, categoria));
-
+            productoList.add(new Categoria(codigo,nombre));
         }
         return productoList;
-
     }
-
 }

@@ -8,12 +8,12 @@ import model.error.ExamError;
 
 import java.util.List;
 
-public class ServiceProduct {
+public class ServiceProducto {
 
     private final DaoProducto daoProducto;
 
     @Inject
-    public ServiceProduct(DaoProducto daoProducto) {
+    public ServiceProducto(DaoProducto daoProducto) {
         this.daoProducto = daoProducto;
     }
 
