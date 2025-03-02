@@ -12,8 +12,7 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-@Log4j2
-@Singleton
+
 public class DBConnectionPool {
     private final Configuration configuration;
     private final DataSource hikariDataSource;
@@ -61,7 +60,7 @@ public class DBConnectionPool {
         try{
             connection = hikariDataSource.getConnection();
         } catch (SQLException e) {
-            log.error(e.getMessage());
+            //log.error(e.getMessage());
         }
         return connection;
     }
@@ -74,7 +73,7 @@ public class DBConnectionPool {
         try {
             connection.close();
         } catch (SQLException e) {
-            log.error(e.getMessage());
+            //log.error(e.getMessage());
         }
     }
 

@@ -10,8 +10,6 @@ import java.util.Properties;
  * Es más probable que pida las propiedades a partir de un archivo XML, así que a tirar de ello
  * **/
 
-@Log4j2
-@Singleton
 public class Configuration {
     private static Configuration instance = null;
     //private Properties propertiestxt;
@@ -27,7 +25,7 @@ public class Configuration {
             propertiesxml = new Properties();
             propertiesxml.loadFromXML(Configuration.class.getClassLoader().getResourceAsStream("configFiles/properties.xml"));
         } catch (IOException e) {
-            log.error(e.getMessage());
+            //log.error(e.getMessage());
         }
     }
 

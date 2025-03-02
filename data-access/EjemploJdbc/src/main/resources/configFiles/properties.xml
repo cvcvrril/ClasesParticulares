@@ -3,14 +3,8 @@
 <properties>
     <comment>XML file</comment>
     <entry key="xmlPath">src/main/resources/xml/Factions.xml</entry>
-    <entry key="sqlUrl">jdbc:mysql://localhost:3306/practicaExamenMongoHibernate</entry>
+    <entry key="sqlUrl">jdbc:mysql://localhost:3306/supermercado?useSSL=false</entry>
     <entry key="sqlUser">root</entry>
-    <entry key="sqlPassword">alumno</entry>
+    <entry key="sqlPassword">root</entry>
     <entry key="driver">com.mysql.cj.jdbc.Driver</entry>
-
-
-    <entry key="customerPathFile">src/main/resources/text/customer.csv</entry>
-    <entry key="ordersPathFile">src/main/resources/text/orders.csv</entry>
-    <entry key="sqlUrlCasa">jdbc:mysql://localhost:3306/practicaExamenMongoHibernate</entry>
-
 </properties>
