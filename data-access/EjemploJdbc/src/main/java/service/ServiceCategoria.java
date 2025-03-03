@@ -4,7 +4,6 @@ import dao.DaoCategoria;
 import io.vavr.control.Either;
 import jakarta.inject.Inject;
 import model.Categoria;
-import model.Producto;
 import model.error.ExamError;
 
 import java.util.List;
